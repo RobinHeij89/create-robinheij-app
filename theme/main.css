@@ -6,7 +6,7 @@
   /* CSS Variables for the XXX theme */
 
   /* Fonts */
-  --font-family-primary: Helvetica, sans-serif;
+  --font-family-primary: helvetica, sans-serif;
 
   /* Global variables */
   --text-color: var(--color-primary);

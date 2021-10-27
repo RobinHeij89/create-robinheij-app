@@ -14,8 +14,6 @@ before_script:
 ### INSTALL ###
 bootstrap:
   stage: install
-  variables:
-    NPM_CONFIG_CACHE: '$CI_PROJECT_DIR/.npm'
   cache:
     paths:
       - node_modules/
@@ -26,7 +24,6 @@ bootstrap:
       - .npm/
   script:
     - npm install
-    - SITE=default npm run codegen
 
 ### TEST ###
 lint:standard:
