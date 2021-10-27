@@ -3,25 +3,14 @@ stages:
   - test
   - deploy
 
-before_script:
-  - |
-    if [[ -z "$NVM_DIR" ]]; then
-      source $NVM_DIR/nvm.sh || true
-      nvm use default || true
-      nvm use || true
-    fi
-
 ### INSTALL ###
 bootstrap:
   stage: install
   cache:
     paths:
       - node_modules/
-      - .npm/
   artifacts:
     untracked: true
-    exclude:
-      - .npm/
   script:
     - npm install
 
