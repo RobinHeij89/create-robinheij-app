@@ -19,7 +19,7 @@ const cfg = {
           },
           {
             key: 'Content-Security-Policy',
-            value: `frame-ancestors self ${process.env.WEBSITE_CMS_URL} *.platform.sh`
+            value: `frame-ancestors self ${process.env.WEBSITE_CMS_URL}`
           },
           {
             key: 'X-XSS-Protection',
