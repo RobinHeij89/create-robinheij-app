@@ -17,6 +17,7 @@
     "lint:style": "stylelint \"**/*.css\" --fix",
     "test": "jest",
     "prepare": "is-ci || husky install",
+    "precommit:lint-staged": "lint-staged",
     "postinstall": "run-s -l postinstall:*",
     "postinstall:patch": "patch-package"
   },
@@ -30,6 +31,7 @@
     "highlight.js": "^10.7.1",
     "isomorphic-dompurify": "^0.15.0",
     "klot": "^0.1.0-alpha.1",
+    "lint-staged": "^11.2.3",
     "next": "^11.1.2",
     "node-cache": "^5.1.2",
     "normalize.css": "^8.0.1",
@@ -96,6 +98,12 @@
     "tsconfig-paths-webpack-plugin": "^3.5.1",
     "typescript": "^4.3.2",
     "webpack": "^5.60.0"
+  },
+  "lint-staged" : {
+    "*.tsx": "ts-standard",
+    "*.ts": "ts-standard",
+    "*.js": "ts-standard",
+    "*.jsx": "ts-standard"
   },
   "ts-standard": {
     "ignore": [

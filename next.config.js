@@ -75,6 +75,9 @@ const cfg = {
     })
 
     return config
+  },
+  images: {
+    domains: ['i.imgur.com']
   }
 }
 

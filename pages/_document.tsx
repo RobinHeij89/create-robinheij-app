@@ -17,6 +17,7 @@ export default class MyDocument extends Document {
       <Html>
         <Head>
           <PerformanceMark name='head-start' />
+          <link rel='preconnect' href='https://imgur.com' />
 
           <PerformanceMark name='gtm-start' />
           <GtmHead containerId={containerId} />
