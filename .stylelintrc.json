@@ -1,0 +1,9 @@
+{
+  "extends": "stylelint-config-standard",
+  "ignoreFiles": [
+    "coverage/lcov-report/*.css"
+  ],
+  "rules": {
+    "selector-pseudo-class-no-unknown": null
+  }
+}

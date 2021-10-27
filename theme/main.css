@@ -1,0 +1,49 @@
+@import 'normalize.css';
+@import './typography.css';
+@import './colors.css';
+
+:root {
+  /* CSS Variables for the XXX theme */
+
+  /* Fonts */
+  --font-family-primary: Helvetica, sans-serif;
+
+  /* Global variables */
+  --text-color: var(--color-primary);
+}
+
+/*
+ * Reset box-sizing property
+ */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+/*
+ * Define global typography
+ */
+html {
+  -webkit-font-smoothing: antialiased;
+  font-size: 62.5%;
+}
+
+html,
+body {
+  font-family: var(--font-family-primary);
+  color: var(--text-color);
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+#__next {
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

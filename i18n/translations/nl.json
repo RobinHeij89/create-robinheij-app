@@ -1,0 +1,7 @@
+{
+  "Page not found": "Pagina niet gevonden",
+  "Test": "Test",
+
+  "/products": "/producten",
+  "/products/{slug}": "/producten/{slug}"
+}

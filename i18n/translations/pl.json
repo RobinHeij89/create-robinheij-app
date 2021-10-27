@@ -1,0 +1,6 @@
+{
+  "Page not found": "Strona nie znaleziona",
+  "Test": "Test",
+  "/products": "/produkty",
+  "/products/{slug}": "/produkty/{slug}"
+}

@@ -1,12 +1,70 @@
-# You can override the included template(s) by including variable overrides
-# SAST customization: https://docs.gitlab.com/ee/user/application_security/sast/#customizing-the-sast-settings
-# Secret Detection customization: https://docs.gitlab.com/ee/user/application_security/secret_detection/#customizing-settings
-# Dependency Scanning customization: https://docs.gitlab.com/ee/user/application_security/dependency_scanning/#customizing-the-dependency-scanning-settings
-# Note that environment variables can be set in several places
-# See https://docs.gitlab.com/ee/ci/variables/#cicd-variable-precedence
 stages:
-- test
-sast:
+  - install
+  - test
+  - deploy
+
+before_script:
+  - |
+    if [[ -z "$NVM_DIR" ]]; then
+      source $NVM_DIR/nvm.sh || true
+      nvm use default || true
+      nvm use || true
+    fi
+
+### INSTALL ###
+bootstrap:
+  stage: install
+  variables:
+    NPM_CONFIG_CACHE: '$CI_PROJECT_DIR/.npm'
+  cache:
+    paths:
+      - node_modules/
+      - .npm/
+  artifacts:
+    untracked: true
+    exclude:
+      - .npm/
+  script:
+    - npm install
+    - SITE=default npm run codegen
+
+### TEST ###
+lint:standard:
   stage: test
-include:
-- template: Security/SAST.gitlab-ci.yml
+  # runs as soon as bootstrap is finished
+  needs:
+    - bootstrap
+  dependencies:
+    - bootstrap
+  script:
+    - npm run lint:standard
+
+lint:style:
+  stage: test
+  # runs as soon as bootstrap is finished
+  needs:
+    - bootstrap
+  dependencies:
+    - bootstrap
+  script:
+    - npm run lint:style
+
+lint:typecheck:
+  stage: test
+  # runs as soon as bootstrap is finished
+  needs:
+    - bootstrap
+  dependencies:
+    - bootstrap
+  script:
+    - npm run lint:typecheck
+
+test:unit:
+  stage: test
+  # runs as soon as bootstrap is finished
+  needs:
+    - bootstrap
+  dependencies:
+    - bootstrap
+  script:
+    - npm run test
