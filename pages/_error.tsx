@@ -5,7 +5,7 @@ import cleanStack from 'clean-stack'
 import { hasValue } from '@misc/helpers'
 
 function loadStackTrace (html: HTMLElement): void {
-  import('highlight.js').then(mod => mod.highlightBlock(html)).finally(() => {})
+  import('highlight.js').then(mod => mod.default.highlightBlock(html)).finally(() => {})
 }
 function ErrorStatus (props: ReturnType<typeof getInitialProps>): JSX.Element {
   const ref = useRef<any>()
@@ -57,8 +57,8 @@ function getInitialProps (props: NextPageContext): GetInitialPropsReturnProps {
   const statusCode = (props.res != null)
     ? props.res.statusCode
     : (props.err != null)
-      ? props.err.statusCode
-      : 404
+        ? props.err.statusCode
+        : 404
   return { statusCode, stack: props.err?.stack }
 }
 

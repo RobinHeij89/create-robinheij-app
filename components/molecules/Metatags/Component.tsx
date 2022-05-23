@@ -44,19 +44,21 @@ export default function Metatags (props: MetatagsProps): JSX.Element {
         content={props.description ?? defaultTags.description}
       />
 
-      {hasValue(props.og_image) ? (
-        <meta
-          property='og:image'
-          key='og:image'
-          content={`${props.og_image ?? ''}?tr=w-1200,h-627`}
-        />
-      ) : (
-        <meta
-          property='og:image'
-          key='og:image'
-          content={`${defaultTags.og_image}`}
-        />
-      )}
+      {hasValue(props.og_image)
+        ? (
+          <meta
+            property='og:image'
+            key='og:image'
+            content={`${props.og_image ?? ''}?tr=w-1200,h-627`}
+          />
+          )
+        : (
+          <meta
+            property='og:image'
+            key='og:image'
+            content={`${defaultTags.og_image}`}
+          />
+          )}
 
       <meta property='og:image:width' key='og:image:width' content='1200' />
 
