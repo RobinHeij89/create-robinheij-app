@@ -55,7 +55,6 @@
     "incremental": true
   },
   "include": [
-    "jest.config.ts",
     "next-env.d.ts",
     "constants",
     "components",
