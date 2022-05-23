@@ -1,6 +1,6 @@
-@import 'normalize.css';
-@import './typography.css';
-@import './colors.css';
+@import "normalize.css";
+@import "./typography.css";
+@import "./colors.css";
 
 :root {
   /* CSS Variables for the XXX theme */
@@ -39,6 +39,7 @@ body {
   font-size: 1.6rem;
 }
 
+/* stylelint-disable-next-line selector-id-pattern */
 #__next {
   overflow-x: hidden;
 }

@@ -17,12 +17,14 @@ export default async function (req: NextApiRequest, res: NextApiResponse): Promi
 
   if (cache.has('sitemap')) {
     res.send(cache.get('sitemap'))
-    return res.end()
+    res.end()
+    return
   }
 
   try {
     if (req.method !== 'GET') {
-      return res.status(405).end()
+      res.status(405).end()
+      return
     }
 
     const url = new URL(getCmsUrl())
@@ -42,8 +44,8 @@ export default async function (req: NextApiRequest, res: NextApiResponse): Promi
 
     res.send(data)
 
-    return res.end()
+    res.end()
   } catch (error) {
-    return res.status(400).json({ error })
+    res.status(400).json({ error })
   }
 }

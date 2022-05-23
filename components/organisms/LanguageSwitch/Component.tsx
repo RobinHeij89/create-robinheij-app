@@ -14,17 +14,19 @@ export default function LanguageSwitch (): JSX.Element {
     <nav>
       <ul>
         {localeIdentifiers.map(l =>
-          localeIdentifier.locale !== l.locale ? (
-            <li key={l.locale}>
-              <Link href={router.asPath} locale={l.locale}>
-                {l.locale}
-              </Link>
-            </li>
-          ) : (
-            <li key={l.locale}>
-              <span>{l.locale} &mdash; you are here</span>
-            </li>
-          )
+          localeIdentifier.locale !== l.locale
+            ? (
+              <li key={l.locale}>
+                <Link href={router.asPath} locale={l.locale}>
+                  {l.locale}
+                </Link>
+              </li>
+              )
+            : (
+              <li key={l.locale}>
+                <span>{l.locale} &mdash; you are here</span>
+              </li>
+              )
         )}
       </ul>
     </nav>
