@@ -5,10 +5,8 @@
   "scripts": {
     "dev": "run-p -l dev:*",
     "dev:next": "next dev",
-    "dev:storybook": "start-storybook -p 6006",
     "build": "run-p -l build:*",
     "build:next": "next build",
-    "build:storybook": "build-storybook",
     "codegen": "graphql-codegen -c codegen.yml",
     "start": "next start",
     "lint": "run-s -l lint:*",
@@ -54,15 +52,6 @@
     "@graphql-codegen/typescript": "^2.4.11",
     "@graphql-codegen/typescript-graphql-request": "^4.4.8",
     "@graphql-codegen/typescript-operations": "^2.4.0",
-    "@storybook/addon-actions": "^6.5.4",
-    "@storybook/addon-essentials": "^6.5.4",
-    "@storybook/addon-links": "^6.5.4",
-    "@storybook/addon-postcss": "^2.0.0",
-    "@storybook/addons": "^6.5.4",
-    "@storybook/builder-webpack5": "^6.5.4",
-    "@storybook/manager-webpack5": "^6.5.4",
-    "@storybook/react": "^6.5.4",
-    "@storybook/theming": "^6.5.4",
     "@svgr/babel-preset": "^6.2.0",
     "@svgr/webpack": "^6.2.1",
     "@types/node": "^17.0.35",
@@ -85,8 +74,6 @@
     "postcss-preset-env": "^7.6.0",
     "react-test-renderer": "^18.1.0",
     "rimraf": "^3.0.2",
-    "storybook-addon-next-router": "^4.0.0",
-    "storybook-css-modules-preset": "^1.1.1",
     "stylelint": "^14.8.3",
     "stylelint-config-standard": "^25.0.0",
     "ts-standard": "*",
@@ -103,8 +90,7 @@
   "ts-standard": {
     "ignore": [
       "coverage",
-      "next-env.d.ts",
-      "*.stories.tsx"
+      "next-env.d.ts"
     ]
   }
 }
